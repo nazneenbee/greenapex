@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container-fluid p-0 m-0">
+        <!-- ROW 1-->
+        <div class="row bg-dark d-flex flex-row align-items-center justify-content-center p-0 m-0">
+          <div class="col p-0 m-0" style="height: 800px;">
+            <div class="">
+              <div class="row bg-secondary sticky-top" style="height: 60px;">
+                <div class="col">
+                    <div class="p-0 m-0">
+                    <img src="logo.jpg" width="100%" height="60px">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center justify-content-between p-0 m-0" style="height: 60px;">
+           <a href="#"><div class="col-1 text-light">Account</div></a>
+          <a href="#"><div class="col-1 text-light">Cards</div></a>
+          <a href="#"><div class="col-1 text-light">Loan</div></a>
+          <a href="#"><div class="col-1 text-light">Business</div></a>
+          <a href="#"><div class="col-1 text-light">offers</div></a>
+          <a href="#"><div class="col-1 text-light">services</div></a>
+          <a href="#"><div class="col text-light d-flex justify-content-end">
+            registration
+          </div></a>
+          <a href="#"><div class="col text-light d-flex justify-content-end">
+            login
+          </div></a>
+          <a href="#"><div class="col text-light d-flex justify-content-end p-2">
+            Logout
+          </div></a>
+        </div>
+        </div>
+        <div class="row" width="100%" height="70px" style="background-image:url(/spring-boot-banking-app/src/main/resources/templates/images/img4.jpg); min-height: 700px;background-position:relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;">
+        
+          <form style="position: absolute;
+          left: 350px;
+          margin: 20px;
+          max-width: 500px;
+          padding: 16px;
+          background-color: white;" th:action="@{/api/savecustomer}" method="post">
+          <div class="m-0 p-0 bg-dark text-light text-center d-flex align-items-center justify-content-center fs-3" style="height: 50px;">Account opening detail</div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">First Name</label>
+              <input type="text" name="firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">  
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Last Name</label>
+              <input type="text" name="lastName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Lat Name">  
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Gender</label>
+              <div class="form-check d-flex justify-content-start p-0 m-0">
+              <div class="form-check">
+                <input class="form-check-input" name="gender" type="radio" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" name="gender" type="radio" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                  Female
+                </label>
+              </div>
+            </div>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email address</label>
+              <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Contact</label>
+              <input type="text" name="contact" class="form-control" id="exampleFormControlInput1" placeholder="Enter contact">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Date Of Birth</label>
+              <input type="text" class="form-control" name="dob" id="exampleFormControlInput1" placeholder="Enter date of birth">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">aadhar number</label>
+              <input type="number" class="form-control" name="aadharNumber" id="exampleFormControlInput1" placeholder="Enter aadhar number">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Pan Number</label>
+              <input type="text" class="form-control" name="panNumber" id="exampleFormControlInput1" placeholder="Enter pan Number">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">account type</label>
+              <select class="form-select pt-1 mb-1" name="accountType" aria-label="Default select example">
+                <option name="accountType" selected >Saving Account</option>
+                <option value="1" name="accountType">Salary Account</option>
+                <option value="2" name="accountType">Current Account</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Open Acoount</button>
+            <button type="submit" class="btn btn-primary">Close</button>
+          </form>
+      </div>
+          
+      </div>
+    </div>
+    
+        </div>
+      
+</body>
+</html>

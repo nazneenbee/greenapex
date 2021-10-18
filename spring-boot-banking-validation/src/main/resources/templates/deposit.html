@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>deposit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid p-0 m-0">
+        <!-- ROW 1-->
+        <div class="row bg-dark d-flex flex-row align-items-center justify-content-center p-0 m-0">
+          <div class="col p-0 m-0">
+              <div class="row bg-secondary" style="height: 60px">
+                <div class="col">
+                    <div class="p-0 m-0">
+                    <img src="/images/logo.jpg" width="100%" height="60px">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center justify-content-between p-0 m-0" style="height: 60px;">
+          <a th:href="@{/api/newuser}"><div class="col-2 text-light">Account</div></a>
+          <a th:href="@{/api/home}"><div class="col-1 text-light">home</div></a>
+           <a th:href="@{/api/transfermoney}"><div class="col text-light">money transfer</div></a>
+          <a th:href="@{/api/withdraw}"><div class="col-1 text-light">withdraw</div></a>
+          <a th:href="@{/api/deposit}"><div class="col-1 text-light">deposit</div></a>
+          <a th:href="@{/api/checkbalace}"><div class="col text-light">check balance</div></a>
+          <a th:href="@{/api/userreg}"><div class="col text-light d-flex justify-content-end">
+            registration
+          </div></a>
+         <a th:href="@{/api/userprofile}"><div class="col text-light d-flex justify-content-end" th:text="${session.user}">
+           
+          </div></a>
+          <a th:href="@{/logout}"><div class="col text-light d-flex justify-content-end p-2">
+            Logout
+          </div></a>
+        </div>
+        <div class="row" style="background-image:url(/images/img4.jpg); min-height: 900px; background-position:relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;">
+        
+        <form style="position: absolute;
+          left: 300px;
+          margin: 20px;
+          width : 600px;
+          padding: 16px;
+          background-color: white;" th:action="@{/api/depositamount}" method="post" >
+        <div class="m-0 p-0 bg-dark text-light text-center d-flex align-items-center justify-content-center" style="height: 50px; font-size: 25px;">Amount Deposit</div>
+         <div class="form-group mt-4">
+              <input type="text" name="balance" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="Enter amount you want to deposit"
+              required
+               oninvalid="this.setCustomValidity('enter amount')"
+               oninput="this.setCustomValidity('')">  
+				<div><span id="firstnameerror"></span></div>
+            </div>
+        <div>
+        <button type="submit" class="btn btn-primary">deposit</button>
+        </div>
+        </form>
+        
+        
+        </div>
+        
+      </div>
+    </div>
+      
+   </div>
+      
+</body>
+</html>

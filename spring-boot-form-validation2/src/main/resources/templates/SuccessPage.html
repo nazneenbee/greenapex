@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid p-0 m-0" style="height: 100vh">
+        <!-- ROW 1-->
+        <div class="row bg-dark d-flex flex-row align-items-center justify-content-center p-0 m-0">
+          <div class="col p-0 m-0" style="height: 1000px;">
+        <div class="row" style="background-image:url(/images/img4.jpg); min-height: 900px; background-position:relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;">
+        
+        <form style="position: absolute;
+          left: 300px;
+          margin: 20px;
+          width : 600px;
+          padding: 16px;
+          background-color: white;" th:object="${message}" >
+          <div class="m-0 p-0 bg-dark text-light text-center d-flex align-items-center justify-content-center" style="height: 50px; font-size: 25px;">Account creation status</div>
+        <div><h3 th:text="${message}"></h3></div>
+        </form>
+        
+        
+        </div>
+        
+      </div>
+    </div>
+      
+   </div>
+      
+</body>
+</html>

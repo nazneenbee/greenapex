@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Login Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid p-0 m-0">
+        <!-- ROW 1-->
+        <div class="row bg-dark d-flex flex-row align-items-center justify-content-center p-0 m-0">
+          <div class="col p-0 m-0">
+              <div class="row bg-secondary" style="height: 60px">
+                <div class="col">
+                    <div class="p-0 m-0">
+                    <img src="/images/logo.jpg" width="100%" height="60px">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center justify-content-between p-0 m-0" style="height: 60px;">
+          <a th:href="@{/api/newuser}"><div class="col-2 text-light">Account</div></a>
+          <a th:href="@{/api/home}"><div class="col-1 text-light">home</div></a>
+          <a th:href="@{/api/transfermoney}"><div class="col text-light">money transfer</div></a>
+          <a th:href="@{/api/withdraw}"><div class="col-1 text-light">withdraw</div></a>
+          <a th:href="@{/api/deposit}"><div class="col-1 text-light">deposit</div></a>
+          <a th:href="@{/api/checkbalace}"><div class="col text-light">check balance</div></a>
+          <a th:href="@{/api/userreg}"><div class="col text-light d-flex justify-content-end">
+            registration
+          </div></a>
+        <a th:href="@{/login}"><div class="col text-light d-flex justify-content-end">
+           login
+          </div></a>
+          <a th:href="@{/logout}"><div class="col text-light d-flex justify-content-end p-2">
+            Logout
+          </div></a>
+        </div>
+        <div class="row" style="background-image:url(/images/img4.jpg); min-height: 900px; background-position:relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;">
+        
+        <form style="position: absolute;
+          left: 300px;
+          margin: 20px;
+          width : 600px;
+          padding: 16px;
+          background-color: white;" th:action="@{/dologin}" method="post" >
+        
+        
+         <div class="m-0 p-0 bg-dark text-light text-center d-flex align-items-center justify-content-center fs-3" style="height: 50px;">User Login</div>
+           
+           <div th:if="${param.error}" class="alert alert-error">    
+                    Invalid username and password.
+                </div>
+                <div th:if="${param.logout}" class="alert alert-success"> 
+                    You have been logged out.
+                </div>
+                
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="required">User Name</label>
+              <input type="text" name="userName" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter User Name"
+               required
+               oninvalid="this.setCustomValidity('Enter User Name')"
+  oninput="this.setCustomValidity('')">  
+   <div><span id="username"></span></div>
+            </div>
+            
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="required">Password</label>
+              <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password"
+              required
+               oninvalid="this.setCustomValidity('Enter password')"
+  oninput="this.setCustomValidity('')">
+              <div><span id="passworderror"></span></div>
+            </div>
+
+             <button type="submit" class="btn btn-primary">Login</button></a>
+            <button type="reset" class="btn btn-primary">reset</button>
+             
+        
+        </form>
+        
+        
+        </div>
+        
+      </div>
+    </div>
+      
+   </div>
+      
+</body>
+</html>

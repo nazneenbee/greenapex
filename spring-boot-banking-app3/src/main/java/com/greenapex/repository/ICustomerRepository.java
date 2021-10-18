@@ -1,0 +1,16 @@
+package com.greenapex.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.greenapex.entity.Customer;
+
+
+@Repository
+public interface ICustomerRepository extends JpaRepository<Customer, Integer>{
+	@Query("select count(*) from Customer c where c.email=email")
+	public boolean getEmail(String email);
+}

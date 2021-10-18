@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Account Detail</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid p-0 m-0">
+        <!-- ROW 1-->
+        <div class="row bg-dark d-flex flex-row align-items-center justify-content-center p-0 m-0">
+          <div class="col p-0 m-0">
+              <div class="row bg-secondary" style="height: 60px">
+                <div class="col">
+                    <div class="p-0 m-0">
+                    <img src="/images/logo.jpg" width="100%" height="60px">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center justify-content-between p-0 m-0" style="height: 60px;">
+           <a th:href="@{/api/newuser}"><div class="col-2 text-light">Account</div></a>
+          <a href="#"><div class="col-1 text-light">Cards</div></a>
+          <a href="#"><div class="col-1 text-light">Loan</div></a>
+          <a href="#"><div class="col-1 text-light">Business</div></a>
+         <a th:href="@{/api/deposit}"><div class="col-1 text-light">deposit</div></a>
+          <a th:href="@{/api/checkbalace}"><div class="col text-light">check balance</div></a>
+          <a th:href="@{/api/userreg}"><div class="col text-light d-flex justify-content-end">
+            registration
+          </div></a>
+          <a th:href="@{/api/userprofile}"><div class="col text-light d-flex justify-content-end">
+            login
+          </div></a>
+          <a href="#"><div class="col text-light d-flex justify-content-end p-2">
+            Logout
+          </div></a>
+        </div>
+          <div class="row" style="background-image:url(/images/img4.jpg); min-height: 900px; background-position:relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;">
+        
+          <form style="position: absolute;
+          left: 300px;
+          margin: 20px;
+          width : 600px;
+          padding: 16px;
+          background-color: white;" th:action="@{/api/userupdate}" method="post" id="createaccount">
+   
+    <div class="row d-flex justify-content-start">
+    <div class="col-4"><label><b>Customer ID</b></label></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.customer.customerId}" ></div>
+    </div>
+    
+     <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><label><b>First Name</b></label></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.customer.firstName}" ></div>
+    </div>
+    
+    <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><label><b>Last Name</b></label></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.customer.lastName}" ></div>
+    </div>
+    
+    <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><label><b>Account Number</b></label></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.accountNumber}" ></div>
+    </div>
+    
+    <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><label><b>IFSC Code</b></label></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.ifscCode}" ></div>
+    </div>
+    
+    <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><label><b>Branch Code</b></label></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.branchCode}" ></div>
+    </div>
+    
+     <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><label><b>Branch Name</b></label></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.branchName}" ></div>
+    </div>
+   
+    <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><b><label>Email</label></b></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.customer.email}" ></div>
+    </div>
+    
+    <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><b><label>gender</label></b></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.customer.gender}" ></div>
+    </div>
+    
+     <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><b><label>Contact Number</label></b></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.customer.contact}" ></div>
+    </div>
+    
+     <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><b><label>Date Of Birth</label></b></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.customer.dob}" ></div>
+    </div>
+    
+    <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><b><label>Account Type</label></b></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.customer.accountType}" ></div>
+    </div> 
+    
+    <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><b><label>Aadhar Number</label></b></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.customer.aadharNumber}" ></div>
+    </div>
+    
+    <div class="row d-flex justify-content-start mt-2">
+    <div class="col-4"><b><label>Pan Number</label></b></div>
+    <div class="col-7 border rounded border-dark ml-3" th:text="${session.acc.customer.panNumber}" ></div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Update detail</button></a>
+    </form>
+  </div>
+</div>
+        </div>
+        
+      </div>
+    </div>
+      
+   </div>
+      
+</body>
+</html>

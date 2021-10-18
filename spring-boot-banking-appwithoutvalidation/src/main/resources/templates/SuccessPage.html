@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid p-0 m-0" style="height: 100vh">
+        <!-- ROW 1-->
+        <div class="row bg-dark d-flex flex-row align-items-center justify-content-center p-0 m-0">
+          <div class="col p-0 m-0" style="height: 1000px;">
+            <div class="">
+              <div class="row bg-secondary" style="height: 60px;">
+                <div class="col">
+                    <div class="p-0 m-0">
+                    <img src="/images/logo.jpg" width="100%" height="60px">
+                    </div>
+                </div>
+               </div>
+            <div class="d-flex flex-row align-items-center justify-content-between p-0 m-0" style="height: 60px;">
+           <a th:href="@{/api/newuser}"><div class="col-1 text-light">Account</div></a>
+          <a th:href="@{/api/home}"><div class="col-1 text-light">Home</div></a>
+            <a th:href="@{/api/transfermoney}"><div class="col text-light">money transfer</div></a>
+          <a th:href="@{/api/withdraw}"><div class="col-1 text-light">withdraw</div></a>
+          <a th:href="@{/api/deposit}"><div class="col-1 text-light">deposit</div></a>
+          <a th:href="@{/api/checkbalace}"><div class="col text-light">check balance</div></a>
+          <a th:href="@{/api/userreg}"><div class="col text-light d-flex justify-content-end">
+            registration
+          </div></a>
+          <a th:href="@{/login}"><div class="col text-light d-flex justify-content-end">
+            login
+          </div></a>
+          <a th:href="@{/logout}"><div class="col text-light d-flex justify-content-end p-2">
+            Logout
+          </div></a>
+        </div>
+        </div>
+        <div class="row" style="background-image:url(/images/img4.jpg); min-height: 900px; background-position:relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;">
+        
+        <form style="position: absolute;
+          left: 300px;
+          margin: 20px;
+          width : 600px;
+          padding: 16px;
+          background-color: white;" th:action="@{/api/userreg}" th:object="${message}" >
+        <div><h3 th:text="${message}"></h3></div>
+        <div>
+        <button type="submit" class="btn btn-primary">Registration</button>
+        </div>
+        </form>
+        
+        
+        </div>
+        
+      </div>
+    </div>
+      
+   </div>
+      
+</body>
+</html>

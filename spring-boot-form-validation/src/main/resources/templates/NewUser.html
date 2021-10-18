@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Account Opening Page</title>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<style>
+  .required:after {
+    content:" *";
+    color: red;
+  }
+</style>
+
+
+</head>
+<body>
+
+     <div class="container-fluid p-0 m-0" style="height: 100vh">
+        <!-- ROW 1-->
+        <div class="row bg-dark d-flex flex-row align-items-center justify-content-center p-0 m-0">
+          <div class="col p-0 m-0" style="height: 1000px;">
+        <div class="row" style="background-image:url(/images/img4.jpg); min-height: 900px; background-position:relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;">
+        
+          <form style="position: absolute;
+          left: 300px;
+          margin: 20px;
+          width : 600px;
+          padding: 16px;
+          background-color: white;" th:action="@{/api/savecustomer}" method="post" id="createaccount">
+          <div class="m-0 p-0 bg-dark text-light text-center d-flex align-items-center justify-content-center" style="height: 50px; font-size: 25px;">Customer detail</div>
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="required">First Name</label>
+              <input type="text" name="firstName" class="form-control"  minlength="3" maxlength="20" id="firstname" aria-describedby="emailHelp" placeholder="Enter First Name"
+              required
+               oninvalid="this.setCustomValidity('Enter First Name')"
+               oninput="this.setCustomValidity('')">  
+				<div><span id="firstnameerror"></span></div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="required">Last Name</label>
+              <input type="text" name="lastName" class="form-control" minlength="3" maxlength="20" id="lastname" aria-describedby="emailHelp" placeholder="Enter Last Name"
+               required
+               oninvalid="this.setCustomValidity('Enter last Name')"
+  oninput="this.setCustomValidity('')">  
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="required">Gender</label>
+              <div class="form-check d-flex justify-content-start p-0 m-0">
+              <div class="form-check">
+                <input class="form-check-input" name="gender" type="radio" id="gender" value="male" required>
+                <label class="form-check-label" for="exampleRadios1">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" name="gender" type="radio" id="gender" value="female">
+                <label class="form-check-label" for="exampleRadios2">
+                  Female
+                </label>
+              </div>
+            </div>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="required">Email address</label>
+              <input type="text" name="email" class="form-control" minlength="3" maxlength="40" id="emailid" placeholder="name@example.com"
+               required
+               oninvalid="this.setCustomValidity('Enter contact number')"
+  oninput="this.setCustomValidity('')">
+              <div><span id="emailerror"></span></div>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="required">Contact</label>
+              <input type="text" name="contact" class="form-control" pattern="[0-9]{10}"minlength="10" maxlength="10" id="contact" placeholder="Enter contact"
+              required
+               oninvalid="this.setCustomValidity('Enter contact number')"
+  oninput="this.setCustomValidity('')">
+   <div><span id="contacterror"></span></div>
+            </div>
+            
+            <div class="form-group">
+		    <label for="exampleFormControlTextarea1" class="required">Address</label>
+		    <textarea class="form-control" name="address"  id="exampleFormControlTextarea1" rows="3" required
+               oninvalid="this.setCustomValidity('Enter Address')"
+  oninput="this.setCustomValidity('')" placeholder="Enter Address"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="required">Date Of Birth</label>
+              <input type="date" class="form-control" name="dob" minlength="3" maxlength="15" id="dob" placeholder="Enter date of birth"
+              required
+               oninvalid="this.setCustomValidity('Enter date of birth')"
+  oninput="this.setCustomValidity('')">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="required">aadhar number</label>
+              <input type="text" class="form-control"  name="aadharNumber"  minlength="12" maxlength="12" id="aadhar" placeholder="Enter aadhar number"
+              required
+               oninvalid="this.setCustomValidity('Enter aadhar number')"
+  oninput="this.setCustomValidity('')">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="required">Pan Number</label>
+              <input type="text" class="form-control" name="panNumber" minlength="10" maxlength="10" id="pannumber" placeholder="Enter pan Number"
+              required
+               oninvalid="this.setCustomValidity('pan card number')"
+  oninput="this.setCustomValidity('')">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="required">account type</label>
+              <select class="form-select pt-1 mb-1" name="accountType" id="accounttype" aria-label="Default select example" required>
+                <option disabled selected value>select an option</option>
+                <option name="accountType" value="Saving Account">Saving Account</option>
+                <option value="salary account" name="accountType">Salary Account</option>
+                <option value="Current Account" name="current Account">Current Account</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Open Account</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+          </form>
+      </div>
+          
+      </div>
+    </div>
+    
+    </div>
+      
+</body>
+</html>

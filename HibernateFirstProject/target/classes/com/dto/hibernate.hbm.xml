@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.dto.Student" table="student">
+        <id name="rno" type="int">
+            <column name="rno" />
+        </id>
+        <property name="studentName"  type="java.lang.String">
+            <column name="student_name" length="50" />
+        </property>
+        <property name="fee" type="float">
+            <column name="fee" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
